@@ -1,11 +1,11 @@
 import { BrowserRouter,Routes, Route}from 'react-router-dom'
-import Home from '../Pages/Home'
+import SigIn from '../Pages/SignIn'
 
 function Router ()  {
   return(
   <BrowserRouter>
     <Routes>
-      <Route exact path="/"  element={<Home/>}/>
+      <Route exact path="/"  element={<SigIn/>}/>
     </Routes>
   </BrowserRouter>
 )}

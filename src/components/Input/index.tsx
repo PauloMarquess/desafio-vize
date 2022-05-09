@@ -1,13 +1,9 @@
-interface InputProps {
-  placeholder: string;
-  type: string;
-  onChange: () => void;
-}
+import { TextField } from '@mui/material';
 
-const Input = ({ placeholder, type, onChange }: InputProps) => {
+const Input = () => {
   return (
     <div>
-      <input onChange={onChange} placeholder={placeholder} type={type} />
+      <TextField label="texto" defaultValue=" " variant="filled" />
     </div>
   );
 };
