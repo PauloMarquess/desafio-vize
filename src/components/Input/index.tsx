@@ -1,10 +1,23 @@
 import { TextField } from '@mui/material';
+import { CardInput } from './style';
 
-const Input = () => {
+interface InputProps {
+  label: string;
+  type: string;
+}
+
+const Input = ({ label, type }: InputProps) => {
   return (
-    <div>
-      <TextField label="texto" defaultValue=" " variant="filled" />
-    </div>
+    <CardInput>
+      <TextField
+        type={type}
+        label={label}
+        defaultValue=" "
+        variant="filled"
+        color="primary"
+        fullWidth
+      />
+    </CardInput>
   );
 };
 
