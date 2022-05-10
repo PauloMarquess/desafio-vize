@@ -38,11 +38,11 @@ export const Container = styled.div<ContainerProps>`
   justify-content: ${(props) => (props.justify ? props.justify : 'center')};
   margin: auto;
   align-items: ${(props) => (props.align ? props.align : 'center')};
-  width: ${(props) => (props.width ? props.width : '100%')};
+  width: ${(props) => (props.width ? props.width : '400px')};
   height: ${(props) => (props.height ? props.height : '100vh')};
   background: ${(props) =>
     props.background ? props.background : 'transparent'};
-    gap:10px ;
+  gap: 10px;
   @media (max-width: 769px) {
     flex-direction: ${({ responsive }) => (responsive ? 'column' : 'row')};
     width: ${({ responsive }) => (responsive ? '100%' : '100%')};

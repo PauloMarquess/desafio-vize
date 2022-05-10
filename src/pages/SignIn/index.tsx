@@ -1,15 +1,15 @@
+import { FormControl } from '@mui/material';
 import Input from '../../components/Input';
+import { InputPassword } from '../../components/Input/password';
 import { Container } from '../../styles/global';
-import { SigninMock } from '../../__mocks__';
 
 const SignIn = () => {
   return (
     <Container>
-      <form>
-        {SigninMock.map((item) => (
-          <Input type={item.type} label={item.nameInput} />
-        ))}
-      </form>
+      <FormControl fullWidth>
+        <Input id="Usuário" label="Usuário" />
+        <InputPassword />
+      </FormControl>
     </Container>
   );
 };

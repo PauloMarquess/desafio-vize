@@ -1,24 +1,17 @@
-import { TextField } from '@mui/material';
+import { Input, InputLabel } from '@mui/material';
 import { CardInput } from './style';
 
 interface InputProps {
   label: string;
-  type: string;
+  id: string;
 }
-
-const Input = ({ label, type }: InputProps) => {
+const Inputs = ({ label, id }: InputProps) => {
   return (
     <CardInput>
-      <TextField
-        type={type}
-        label={label}
-        defaultValue=" "
-        variant="filled"
-        color="primary"
-        fullWidth
-      />
+      <InputLabel htmlFor={id}>{label}</InputLabel>
+      <Input fullWidth id={id} type="text" />
     </CardInput>
   );
 };
 
-export default Input;
+export default Inputs;
