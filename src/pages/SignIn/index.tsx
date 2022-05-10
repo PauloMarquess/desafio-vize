@@ -11,7 +11,13 @@ const SignIn = () => {
       <form>
         <Input id="Usuário" label="Usuário" />
         <InputPassword />
-        <ButtonUi width children="Login" onClick={() => {}} />
+        <ButtonUi
+          width
+          children="Login"
+          onClick={() => {
+            navigation('/users');
+          }}
+        />
         <ButtonUi
           children="Registrar"
           onClick={() => {

@@ -1,4 +1,3 @@
-import { FormControl } from '@mui/material';
 import styled, { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
@@ -9,14 +8,14 @@ export default createGlobalStyle`
     outline: 0;
     text-decoration: none;
     list-style: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
   }
   body {
     -webkit-font-smoothing: antialiased;
   }
   body,input,button,textarea{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
   button {
