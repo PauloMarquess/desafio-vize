@@ -6,7 +6,7 @@ export const CardInput = styled.div`
   background-color: ${COLORS.secondary};
   input {
     padding-left: 14px;
-    height: 42px;
+    height: 30px;
   }
   label {
     font-size: 12px;

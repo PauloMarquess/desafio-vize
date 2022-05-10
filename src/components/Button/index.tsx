@@ -11,7 +11,7 @@ interface ButtonProps {
 export const ButtonUi = ({ onClick, children, width }: ButtonProps) => {
   return (
     <ContainerButton width={width}>
-      <Button variant="contained" onClick={onClick} fullWidth>
+      <Button type="submit" variant="contained" onClick={onClick} fullWidth>
         {children}
       </Button>
     </ContainerButton>
