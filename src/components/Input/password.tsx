@@ -19,7 +19,7 @@ export const InputPassword = () => {
           <InputAdornment position="end">
             <IconButton
               aria-label="toggle password visibility"
-              onClick={(e) => setShowPassword(!showPassword)}
+              onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? <VisibilityOff /> : <Visibility />}
             </IconButton>

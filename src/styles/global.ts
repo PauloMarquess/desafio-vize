@@ -1,3 +1,4 @@
+import { FormControl } from '@mui/material';
 import styled, { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
@@ -43,9 +44,15 @@ export const Container = styled.div<ContainerProps>`
   background: ${(props) =>
     props.background ? props.background : 'transparent'};
   gap: 10px;
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
   @media (max-width: 769px) {
     flex-direction: ${({ responsive }) => (responsive ? 'column' : 'row')};
     width: ${({ responsive }) => (responsive ? '100%' : '100%')};
-    height: ${({ htresponsive }) => (htresponsive ? '100vh' : 'auto')};
+    height: ${({ htresponsive }) => (htresponsive ? 'auto' : '100vh')};
   }
 `;

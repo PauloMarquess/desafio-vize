@@ -1,15 +1,19 @@
 import { ReactNode } from 'react';
 import { ContainerButton } from './style';
+import { Button } from '@mui/material';
 
 interface ButtonProps {
   children: ReactNode;
   onClick: () => void;
+  width?: string | boolean;
 }
 
-export const Button = ({ children, onClick }: ButtonProps) => {
+export const ButtonUi = ({ onClick, children, width }: ButtonProps) => {
   return (
-    <ContainerButton>
-      <button onClick={onClick}>{children}</button>
+    <ContainerButton width={width}>
+      <Button variant="contained" onClick={onClick} fullWidth>
+        {children}
+      </Button>
     </ContainerButton>
   );
 };

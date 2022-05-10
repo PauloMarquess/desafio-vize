@@ -1,15 +1,17 @@
-import { FormControl } from '@mui/material';
-import Input from '../../components/Input';
+import { ButtonUi } from '../../components/Button';
+import Input from '../../components/Input/input';
 import { InputPassword } from '../../components/Input/password';
 import { Container } from '../../styles/global';
 
 const SignIn = () => {
   return (
     <Container>
-      <FormControl fullWidth>
+      <form>
         <Input id="Usuário" label="Usuário" />
         <InputPassword />
-      </FormControl>
+        <ButtonUi width children="Login" onClick={() => {}} />
+        <ButtonUi children="Registrar" onClick={() => {}} />
+      </form>
     </Container>
   );
 };
