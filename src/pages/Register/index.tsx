@@ -23,19 +23,15 @@ const Register = () => {
     console.log(errors);
   };
 
-  const { control, watch, handleSubmit } = useForm({
+  const { control, handleSubmit } = useForm({
     resolver: yupResolver(schema),
     mode: 'all',
   });
 
-  const watchedValues = watch();
-
-  console.log(watchedValues);
-
   return (
     <Container>
       <form onSubmit={handleSubmit(onSubmit, onSubmitValidationError)}>
-        <Input name="user" control={control} id="Usuário" label="Usuário" />
+        <Input name="user" control={control} id="usuario" label="Usuário" />
         <InputPassword name="password" control={control} />
         <Input name="name" control={control} id="Nome" label="Nome" />
         <ButtonUi children="Registrar" onClick={() => {}} />

@@ -6,7 +6,7 @@ interface StyleProps {
 
 export const ContainerButton = styled.div<StyleProps>`
   width: ${({ width }) => (width ? '315px' : '260px')};
-  margin: auto;
+  margin: 0 auto;
 
   Button {
     border-radius: 100px;
