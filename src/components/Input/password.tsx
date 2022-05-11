@@ -18,7 +18,7 @@ export const InputPassword = ({ name, control }: Props) => {
         <Controller
           name={name}
           control={control}
-          render={({ field: { value, onChange } }) => (
+          render={({ field: { value, onChange }, fieldState: { error } }) => (
             <CardInput>
               <InputLabel htmlFor="id-password">Password</InputLabel>
               <Input
@@ -38,6 +38,7 @@ export const InputPassword = ({ name, control }: Props) => {
                   </InputAdornment>
                 }
               />
+              {error && <p>{error.message}</p>}
             </CardInput>
           )}
         />
