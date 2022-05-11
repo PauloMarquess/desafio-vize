@@ -6,16 +6,19 @@ import { Container } from '../../styles/global';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
+import api from '../../sevices/index';
 
 const schema = yup.object().shape({
-  userLogin: yup.string().required(),
-  passwordLogin: yup.string().required(),
+  email: yup.string().required(),
+  password: yup.string().required(),
 });
 
 const SignIn = () => {
   const navigation = useNavigate();
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = async (data: any) => {
+    const response = await api.post('/authaccount/login', data);
+    console.log(response.data.data.Token);
+    await localStorage.setItem('user', JSON.stringify(response.data.data));
   };
 
   const onSubmitValidationError = (errors: any) => {
@@ -27,15 +30,18 @@ const SignIn = () => {
     mode: 'all',
   });
   return (
-    <Container>
-      <form onSubmit={handleSubmit(onSubmit, onSubmitValidationError)}>
+    <Container responsive>
+      <form
+        autoComplete="off"
+        onSubmit={handleSubmit(onSubmit, onSubmitValidationError)}
+      >
         <Input
-          name="userLogin"
+          name="email"
           control={control}
           id="usuario-login"
-          label="Usuário"
+          label="Email"
         />
-        <InputPassword name="passwordLogin" control={control} />
+        <InputPassword name="password" control={control} />
         <ButtonUi width children="Login" onClick={() => {}} />
       </form>
       <ButtonUi
