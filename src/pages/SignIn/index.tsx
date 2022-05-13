@@ -16,9 +16,17 @@ const schema = yup.object().shape({
 const SignIn = () => {
   const navigation = useNavigate();
   const onSubmit = async (data: any) => {
-    const response = await api.post('/authaccount/login', data);
-    console.log(response.data.data.Token);
-    await localStorage.setItem('user', JSON.stringify(response.data.data));
+    try {
+      const response = await api.post('/authaccount/login', data);
+      console.log(response);
+      if (response.data.message !== 'success') {
+        throw new Error(response.data.message);
+      }
+      await localStorage.setItem('user', JSON.stringify(response.data.data));
+      navigation('/users');
+    } catch (error) {
+      alert(error);
+    }
   };
 
   const onSubmitValidationError = (errors: any) => {
