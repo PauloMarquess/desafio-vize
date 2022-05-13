@@ -55,3 +55,7 @@ export const Container = styled.div<ContainerProps>`
     height: ${({ htresponsive }) => (htresponsive ? 'auto' : '100vh')};
   }
 `;
+
+export const MessageError = styled.p`
+  color: red;
+`;

@@ -25,7 +25,7 @@ const SignIn = () => {
       await localStorage.setItem('user', JSON.stringify(response.data.data));
       navigation('/users');
     } catch (error) {
-      alert(error);
+      alert('Usuário ou senha inválido');
     }
   };
 
@@ -48,8 +48,13 @@ const SignIn = () => {
           control={control}
           id="usuario-login"
           label="Email"
+          messageError="E-mail é obrigatório"
         />
-        <InputPassword name="password" control={control} />
+        <InputPassword
+          name="password"
+          control={control}
+          messageError="Password é obrigatório"
+        />
         <ButtonUi width children="Login" onClick={() => {}} />
       </form>
       <ButtonUi

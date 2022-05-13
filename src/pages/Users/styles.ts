@@ -13,6 +13,7 @@ export const ContainerUsers = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 8%;
+
   h1 {
     margin-bottom: 40px;
     font-weight: 400;
@@ -21,6 +22,7 @@ export const ContainerUsers = styled.div`
 export const Table = styled.div`
   display: flex;
   gap: 4px;
+
   h5 {
     background-color: ${COLORS.third};
   }
@@ -47,4 +49,5 @@ export const Card = styled.div<CardProps>`
   flex-direction: column;
   text-align: ${({ text }) => (text ? 'start' : 'center')};
   border: 1px solid ${COLORS.third};
+  margin-bottom: 30px;
 `;

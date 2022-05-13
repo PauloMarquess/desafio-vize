@@ -1,5 +1,6 @@
 import { Input, InputLabel } from '@mui/material';
 import { Control, Controller, useController } from 'react-hook-form';
+import { MessageError } from '../../styles/global';
 import { CardInput } from './style';
 
 interface InputProps {
@@ -7,8 +8,9 @@ interface InputProps {
   control: Control<any>;
   label: string;
   id: string;
+  messageError?: string;
 }
-const Inputs = ({ label, id, name, control }: InputProps) => {
+const Inputs = ({ label, id, name, control, messageError }: InputProps) => {
   return (
     <>
       {control ? (
@@ -25,7 +27,7 @@ const Inputs = ({ label, id, name, control }: InputProps) => {
                 value={value}
                 onChange={onChange}
               />
-              {error && <p>{error.message}</p>}
+              {error && <MessageError>{messageError}</MessageError>}
             </CardInput>
           )}
         />

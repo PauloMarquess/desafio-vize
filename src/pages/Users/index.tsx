@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import api from '../../sevices';
-import { UserMocks } from '../../__mocks__';
 import { Card, ContainerUsers, Table } from './styles';
 
 export const Users = () => {
@@ -33,14 +32,14 @@ export const Users = () => {
       <Table>
         <Card width>
           <h5>ID</h5>
-          {UserMocks.map((id) => (
-            <p>{id.id}</p>
+          {users.map((item: any) => (
+            <p>{item.id}</p>
           ))}
         </Card>
         <Card text>
           <h5>Nome</h5>
-          {UserMocks.map((id) => (
-            <p>{id.user}</p>
+          {users.map((id: any) => (
+            <p>{id.name}</p>
           ))}
         </Card>
       </Table>

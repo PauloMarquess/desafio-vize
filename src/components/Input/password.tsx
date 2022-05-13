@@ -2,14 +2,16 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { IconButton, Input, InputAdornment, InputLabel } from '@mui/material';
 import { useState } from 'react';
 import { Control, Controller } from 'react-hook-form';
+import { MessageError } from '../../styles/global';
 import { CardInput } from './style';
 
 type Props = {
   control?: Control<any>;
   name: string;
+  messageError: string;
 };
 
-export const InputPassword = ({ name, control }: Props) => {
+export const InputPassword = ({ name, control, messageError }: Props) => {
   const [password, setPassword] = useState<any>('');
   const [showPassword, setShowPassword] = useState<any>(false);
   return (
@@ -20,10 +22,10 @@ export const InputPassword = ({ name, control }: Props) => {
           control={control}
           render={({ field: { value, onChange }, fieldState: { error } }) => (
             <CardInput>
-              <InputLabel htmlFor="id-password">Password</InputLabel>
+              <InputLabel htmlFor="password">Password</InputLabel>
               <Input
                 fullWidth
-                id="id-password"
+                id="password"
                 type={showPassword ? 'text' : 'password'}
                 value={value}
                 onChange={onChange}
@@ -38,7 +40,7 @@ export const InputPassword = ({ name, control }: Props) => {
                   </InputAdornment>
                 }
               />
-              {error && <p>{error.message}</p>}
+              {error && <MessageError>{messageError}</MessageError>}
             </CardInput>
           )}
         />
